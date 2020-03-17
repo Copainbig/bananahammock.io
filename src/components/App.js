@@ -2,7 +2,9 @@ import { hot } from 'react-hot-loader';
 import React from 'react'
 import PropTypes from 'prop-types';
 
-const App = () =><div data-testid="app-div">Soon...</div>; 
+import WelcomeLogo from './WelcomeLogo';
+
+const App = () => <div data-testid="app-div"><WelcomeLogo /></div>; 
 
 App.propTypes = { 
   message: PropTypes.string 

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "lint": "eslint ./src",
-    "test": "jest --colors -b -e --logHeapUsage --no-cache --config jest.config.js",
+    "test": "jest --colors -b -e --logHeapUsage --no-cache",
     "build": "webpack --mode production",
     "deploy": "npm run build"
   },

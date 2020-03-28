@@ -1,4 +1,5 @@
 import React from 'react';
+import 'Styles/WelcomeLogo.scss';
 
 const WelcomeLogo = () => {
     return (

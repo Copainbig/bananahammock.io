@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader';
 import React from 'react'
 import PropTypes from 'prop-types';
-import 'Styles/styles.scss';
+import 'Styles/App.scss';
 
 
 import WelcomeLogo from 'Sources/components/WelcomeLogo';

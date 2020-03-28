@@ -8,7 +8,8 @@
     "lint": "eslint ./src",
     "test": "jest --colors -b -e --logHeapUsage --no-cache",
     "build": "webpack --mode production",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "storybook": "start-storybook"
   },
   "author": "Charles HUSQUIN",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "@storybook/react": "^5.3.17",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "autoprefixer": "^9.7.4",

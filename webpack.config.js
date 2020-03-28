@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
   entry: './src/index.js',
@@ -16,24 +18,20 @@ module.exports = {
         use: { loader: 'babel-loader' }
       },
       {
-        test: /\.css$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [autoprefixer()]
-            }
-          }
-        ]
+        test: /\.scss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
+  },
+  resolve: {
+    alias: {
+      Sources: path.resolve(__dirname, './src/'),
+      Styles: path.resolve(__dirname, './src/styles/')
+    }
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: process.env.production ? `index.[chunkHash].js` : `index.[hash].js`
-
   },
   mode: 'development',
   devServer: {
@@ -43,6 +41,7 @@ module.exports = {
     open: true
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'BananaHammock.io',

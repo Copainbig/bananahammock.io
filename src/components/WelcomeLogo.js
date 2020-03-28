@@ -1,14 +1,16 @@
 import React from 'react';
-import './../styles/welcomeLogo.css';
 
 const WelcomeLogo = () => {
     return (
-        <div>
-            <div className="bananaTitle"> BananaHammock.io </div>
-            <img className="bananaLogo" 
-                src="https://s3.amazonaws.com/bananahammock.io.public/banana_logo_m.png"
-                alt="banana hammock icon" 
-            />
+        <div className="bananaLogoContainer">
+            <div>
+                <div className="bananaTitle" data-testid="welcome-logo-title"> BananaHammock.io </div>
+                <img className="bananaLogo" 
+                    data-testid="welcome-logo-icon"
+                    src="https://s3.amazonaws.com/bananahammock.io.public/banana_logo_m.png"
+                    alt="banana hammock icon" 
+                />
+            </div>
         </div>
     )
 };

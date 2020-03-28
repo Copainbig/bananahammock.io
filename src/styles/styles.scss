@@ -1,0 +1,58 @@
+html, body {
+    height: 100%;
+}
+
+#root {
+    height:100%;
+}
+
+#app {
+    height: 100%;
+}
+
+.bananaLogoContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    > div:first-child {
+        display: inline-block;
+    }
+}
+
+.bananaTitle {
+    text-align: center;
+    animation-name: titleColorsSwitch;  
+    animation-iteration-count: infinite;  
+    animation-duration: 8s; 
+    font-weight: bold;
+    font-family: 'Baloo 2', cursive;
+    font-size: 2em;
+}
+
+.bananaLogo {
+    width: 100%;
+    animation-name: moveIconUpAndDown;  
+    animation-iteration-count: infinite;  
+    animation-duration: 2s; 
+    animation-timing-function: linear;
+}
+
+@keyframes titleColorsSwitch {  
+    0% { color: red; }
+    10% { color: orange; }
+    30% { color: yellow; }
+    50% { color: green; }
+    70% { color: blue; }
+    90% { color: purple; }
+    100% { color: red; }
+}
+
+@keyframes moveIconUpAndDown {  
+    0% { margin-top: -4em; }
+    50% { margin-top: -2em; }
+    100% { margin-top: -4em; }
+}

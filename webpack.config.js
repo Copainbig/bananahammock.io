@@ -1,9 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 
 module.exports = {
   entry: './src/index.js',
@@ -18,8 +16,24 @@ module.exports = {
         use: { loader: 'babel-loader' }
       },
       {
-        test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        test: /\.global\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        exclude: /\.global\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { modules: true }
+          },
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -41,7 +55,9 @@ module.exports = {
     open: true
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'BananaHammock.io',

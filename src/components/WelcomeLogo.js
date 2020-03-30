@@ -1,14 +1,14 @@
 import React from 'react';
-import 'Styles/WelcomeLogo.scss';
+import styles from 'Styles/WelcomeLogo.scss';
 
 const WelcomeLogo = () => {
   return (
-    <div className="bananaLogoContainer">
+    <div className={styles.bananaLogoContainer}>
       <div>
-        <div className="bananaTitle" data-testid="welcome-logo-title">
+        <div className={styles.bananaTitle} data-testid="welcome-logo-title">
           BananaHammock.io
         </div>
-        <img className="bananaLogo"
+        <img className={styles.bananaLogo}
           data-testid="welcome-logo-icon"
           src="https://s3.amazonaws.com/bananahammock.io.public/banana_logo_m.png"
           alt="banana hammock icon"/>

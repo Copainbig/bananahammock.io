@@ -8,7 +8,6 @@ afterEach(cleanup)
 describe("<WelcomeLogo />", () => {
     it("ToDo", () => {
         const { getByTestId } = render(<WelcomeLogo />);
-        const appDivTestId = "app-div";
         expect(getByTestId("welcome-logo-title")).toBeInTheDocument();
         expect(getByTestId("welcome-logo-icon")).toBeInTheDocument();
     })

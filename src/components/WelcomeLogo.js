@@ -10,7 +10,7 @@ const WelcomeLogo = () => {
         </div>
         <img className={styles.bananaLogo}
           data-testid="welcome-logo-icon"
-          src="https://s3.amazonaws.com/bananahammock.io.public/banana_logo_m.png"
+          src="https://bananahammock.io/assets/banana_logo_m.png"
           alt="banana hammock icon"/>
       </div>
     </div>

@@ -33,6 +33,6 @@ jobs:
     - name: build assets
       run: npm run build    
     - name: deploy
-      run: aws s3 rm ${{ secrets.S3_BUCKET }} --recursive && aws s3 cp ./dist ${{ secrets.S3_BUCKET }}/ --recursive
+      run: aws s3 rm ${{ secrets.S3_BUCKET }} --recursive --exclude "assets/*" && aws s3 cp ./dist ${{ secrets.S3_BUCKET }}/ --recursive
     - name: invalid cloudfront cache
       run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/*"
